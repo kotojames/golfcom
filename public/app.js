@@ -30,11 +30,25 @@ const adminPanel = document.getElementById('admin-panel');
 const adminUserList = document.getElementById('admin-user-list');
 const adminInviteList = document.getElementById('admin-invite-list');
 const adminMessageList = document.getElementById('admin-message-list');
+const mobileAdminSectionSelect = document.getElementById('mobile-admin-section');
+const adminSections = Array.from(document.querySelectorAll('.admin-section'));
 const messagesEl = document.getElementById('messages');
 const chatHeaderEl = document.getElementById('chat-header');
 const messageForm = document.getElementById('message-form');
 const messageInput = document.getElementById('message-input');
 const logoutButton = document.getElementById('logout-button');
+
+if (mobileAdminSectionSelect) {
+  mobileAdminSectionSelect.addEventListener('change', () => {
+    syncAdminSections();
+    const activeSection = document.querySelector(`.admin-section[data-admin-section="${mobileAdminSectionSelect.value}"]`);
+    if (activeSection && window.innerWidth <= 840) {
+      activeSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+}
+
+window.addEventListener('resize', syncAdminSections);
 
 function setAuthStatus(message, type = '') {
   authStatus.textContent = message;
@@ -113,6 +127,24 @@ function renderMessages(messages) {
   });
 
   messagesEl.scrollTop = messagesEl.scrollHeight;
+}
+
+function syncAdminSections() {
+  if (!mobileAdminSectionSelect || !adminSections.length) {
+    return;
+  }
+
+  const selectedSection = mobileAdminSectionSelect.value;
+
+  if (window.innerWidth <= 840) {
+    adminSections.forEach((section) => {
+      const shouldShow = section.dataset.adminSection === selectedSection;
+      section.classList.toggle('mobile-hidden', !shouldShow);
+    });
+    return;
+  }
+
+  adminSections.forEach((section) => section.classList.remove('mobile-hidden'));
 }
 
 async function request(path, options = {}) {

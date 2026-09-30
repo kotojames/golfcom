@@ -8,6 +8,7 @@
   </head>
   <body>
     <div class="app-shell">
+      <div class="bg-blur" aria-hidden="true"></div>
       <section id="auth-panel" class="panel auth-panel">
         <div class="brand-header">
           <img class="brand-logo" src="/logo.svg" alt="Private Comm logo" />
@@ -71,7 +72,17 @@
               <h3>Admin panel</h3>
             </div>
 
-            <div class="admin-section create-user-block">
+            <div class="mobile-admin-nav">
+              <label class="sr-only" for="mobile-admin-section">Jump to section</label>
+              <select id="mobile-admin-section" aria-label="Jump to admin section">
+                <option value="create-user">Create user</option>
+                <option value="invite-codes">Invite codes</option>
+                <option value="users">Users</option>
+                <option value="messages">Messages</option>
+              </select>
+            </div>
+
+            <div class="admin-section create-user-block" data-admin-section="create-user">
               <h4>Create user</h4>
               <form id="invite-form" class="invite-form">
                 <input id="invite-username" type="text" placeholder="New user name" />
@@ -80,17 +91,17 @@
               <p id="invite-code-output" class="status-text"></p>
             </div>
 
-            <div class="admin-section">
+            <div class="admin-section" data-admin-section="invite-codes">
               <h4>Invite codes</h4>
               <ul id="admin-invite-list" class="admin-list"></ul>
             </div>
 
-            <div class="admin-section">
+            <div class="admin-section" data-admin-section="users">
               <h4>Users</h4>
               <ul id="admin-user-list" class="admin-list"></ul>
             </div>
 
-            <div class="admin-section">
+            <div class="admin-section" data-admin-section="messages">
               <h4>Messages</h4>
               <ul id="admin-message-list" class="admin-list"></ul>
             </div>
