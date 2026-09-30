@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Private Comm</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <section id="auth-panel" class="panel auth-panel">
+        <div class="brand-header">
+          <img class="brand-logo" src="/logo.svg" alt="Private Comm logo" />
+          <h1>Private Comm</h1>
+        </div>
+        <p class="subtitle">Choose your login route.</p>
+
+        <div class="auth-switcher" aria-label="Authentication routes">
+          <button type="button" class="auth-toggle active" data-auth-target="admin">Admin login</button>
+          <button type="button" class="auth-toggle" data-auth-target="user">User access</button>
+        </div>
+
+        <div class="auth-stack">
+          <div class="auth-block auth-view active" data-view="admin">
+            <h2>Admin login</h2>
+            <form id="auth-form">
+              <label>
+                Username
+                <input id="username" name="username" type="text" minlength="3" placeholder="" />
+              </label>
+
+              <label>
+                Password
+                <input id="password" name="password" type="password" placeholder="" />
+              </label>
+
+              <label>
+                Admin secret code
+                <input id="admin-secret-code" name="admin-secret-code" type="text" placeholder="" />
+              </label>
+
+              <button id="auth-button" type="submit">Admin login</button>
+              <p id="auth-status" class="status-text"></p>
+            </form>
+          </div>
+
+          <div class="auth-block auth-view" data-view="user">
+            <h2>User access</h2>
+            <form id="user-code-form">
+              <label>
+                Access code
+                <input id="user-code" name="user-code" type="text" placeholder="Enter the code sent by admin" />
+              </label>
+
+              <button type="submit">Join with code</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section id="chat-panel" class="panel app-panel hidden">
+        <aside class="sidebar">
+          <div class="sidebar-header">
+            <h2>Contacts</h2>
+            <button id="logout-button" type="button" class="secondary">Logout</button>
+          </div>
+          <ul id="contacts" class="contacts-list"></ul>
+
+          <div id="admin-panel" class="admin-panel hidden">
+            <div class="admin-header">
+              <h3>Admin panel</h3>
+            </div>
+
+            <div class="admin-section create-user-block">
+              <h4>Create user</h4>
+              <form id="invite-form" class="invite-form">
+                <input id="invite-username" type="text" placeholder="New user name" />
+                <button type="submit">Create user</button>
+              </form>
+              <p id="invite-code-output" class="status-text"></p>
+            </div>
+
+            <div class="admin-section">
+              <h4>Invite codes</h4>
+              <ul id="admin-invite-list" class="admin-list"></ul>
+            </div>
+
+            <div class="admin-section">
+              <h4>Users</h4>
+              <ul id="admin-user-list" class="admin-list"></ul>
+            </div>
+
+            <div class="admin-section">
+              <h4>Messages</h4>
+              <ul id="admin-message-list" class="admin-list"></ul>
+            </div>
+          </div>
+        </aside>
+
+        <main class="chat-area">
+          <header id="chat-header" class="chat-header">Select a contact</header>
+          <div id="messages" class="messages" aria-live="polite"></div>
+
+          <form id="message-form" class="message-form">
+            <input id="message-input" type="text" maxlength="500" placeholder="Type a private message..." required />
+            <button type="submit">Send</button>
+          </form>
+        </main>
+      </section>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>

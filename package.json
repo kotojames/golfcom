@@ -1,0 +1,27 @@
+{
+  "name": "comm-private-chat",
+  "version": "1.0.0",
+  "description": "Private communication system with authenticated direct-message rooms",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test"
+  },
+  "keywords": [
+    "chat",
+    "private",
+    "socket.io",
+    "express"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "socket.io": "^4.8.4",
+    "uuid": "^14.0.2"
+  }
+}

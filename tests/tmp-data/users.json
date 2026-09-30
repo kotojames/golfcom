@@ -1,0 +1,72 @@
+[
+  {
+    "id": "e5b7e311-f47f-4557-bb68-9c76a7596126",
+    "username": "admin",
+    "password": "$2b$10$c0ga6BjjxOphlQ//ZUqhJOfyRxHknjCiGY3wUx1sMXDeT7SQopMXm",
+    "createdAt": "2026-09-30T11:04:10.090Z",
+    "admin": true
+  },
+  {
+    "id": "24c5a37a-a4cd-4882-9b8f-c19306acccc4",
+    "username": "alice-1790766249980",
+    "password": "$2b$10$bSXIzbgBb39n5U3f6T/6s.br3zXMwAyJm6UWOuni5J.s.nB/WpL86",
+    "createdAt": "2026-09-30T11:04:10.210Z"
+  },
+  {
+    "id": "a30095cf-aef8-4b92-b335-8a1bbe19af93",
+    "username": "moderator-1790766250312",
+    "password": "$2b$10$KrqQiiifBW8ugas/EQPtou9qC/8d5LHRDfgm61ZVvHB/3OOwvtNXC",
+    "createdAt": "2026-09-30T11:04:10.423Z",
+    "banned": true,
+    "bannedAt": "2026-09-30T11:04:10.440Z"
+  },
+  {
+    "id": "c562bda3-5140-47b8-9963-b64e53a9a1d1",
+    "username": "new-user",
+    "password": "$2b$10$.NKOfr8QfKcWDi3S/x./x.sE96qE2g6JGDGTqLkSnRqOrLxd7JXkG",
+    "createdAt": "2026-09-30T11:04:10.589Z",
+    "invited": true,
+    "updatedAt": "2026-09-30T11:04:10.612Z"
+  },
+  {
+    "id": "ee63304e-d1e8-4b60-aeae-fabb3daa74ab",
+    "username": "code-only-user",
+    "password": "$2b$10$BJwVyty0PYzFsVFlbS7RGe3ivtNVUjwGqPTkh.TTqX8sRI8wVGTt2",
+    "createdAt": "2026-09-30T11:04:10.785Z",
+    "invited": true,
+    "updatedAt": "2026-09-30T11:04:10.820Z"
+  },
+  {
+    "id": "66014de7-2f6f-4560-87d9-7419d1fa00f9",
+    "username": "chat-user-1790766250832",
+    "password": "$2b$10$NJHjeIMxANA9CJxFVvsFUem2K4XuNbpgOTkqFCY9N2UJgUy2tfvCi",
+    "createdAt": "2026-09-30T11:04:11.002Z",
+    "invited": true,
+    "updatedAt": "2026-09-30T11:04:11.034Z"
+  },
+  {
+    "id": "af58eff6-4e38-42a2-ae01-e0f4c511f138",
+    "username": "repeat-user-1790766251036",
+    "password": "$2b$10$MM9Cf0BeEFlEritBynQn/eLctqZWz2a49BYJKNCu5Z9rW1QrfTP3W",
+    "createdAt": "2026-09-30T11:04:11.151Z",
+    "invited": true,
+    "updatedAt": "2026-09-30T11:04:11.561Z"
+  },
+  {
+    "id": "a71d1e60-f732-4746-bdb1-c63ed4929924",
+    "username": "visible-user-1790766251564",
+    "password": "$2b$10$sC42x8.RUfGe0lqLXz7a1ukKjsVWluM6/HImV0blmi/KOtV2vMbVC",
+    "createdAt": "2026-09-30T11:04:11.672Z",
+    "invited": true,
+    "updatedAt": "2026-09-30T11:04:11.696Z"
+  },
+  {
+    "id": "2f4f02e5-4da7-4112-ae40-e24ddee8de2d",
+    "username": "banned-user-1790766251708",
+    "password": "$2b$10$8hLenFCIdvuZwZ0AuIPlcOppOXLbTE8DuBpwjL/NqndJcX4INeAj2",
+    "createdAt": "2026-09-30T11:04:11.802Z",
+    "invited": true,
+    "banned": true,
+    "bannedAt": "2026-09-30T11:04:11.814Z"
+  }
+]
